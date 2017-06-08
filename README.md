@@ -1,0 +1,1 @@
+A simple dice simulator to check your odds of winning before spending real money on online dice casinos. Programmed in Python 2.7.X
