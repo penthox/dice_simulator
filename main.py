@@ -17,7 +17,7 @@ def calculate():
             else:
                 cur_bet = cur_bet*float(LOOSE_IN)
         else:
-            print "Stopped after",counter,"rounds, because your current bet(",int(float(cur_bet)),") is exceeding your money(",int(float(cur_money)),")"
+            print "Stopped after",counter,"rounds, because your current bet (",int(float(cur_bet)),") is exceeding your money(",int(float(cur_money)),")"
             break
     print "That's what you would have after that:",int(float(cur_money))
 
