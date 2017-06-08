@@ -1,7 +1,7 @@
 from random import randint
 
-def exit_program():
-    print "Wrong Number!"
+def exit_program(message):
+    print message
     exit()
 
 def calculate():
@@ -17,33 +17,29 @@ def calculate():
             else:
                 cur_bet = cur_bet*float(LOOSE_IN)
         else:
-            print "Stopped after",counter,"rounds, because your current bet(",cur_bet,") is exceeding your money(",cur_money,")"
+            print "Stopped after",counter,"rounds, because your current bet(",int(float(cur_bet)),") is exceeding your money(",int(float(cur_money)),")"
             break
-    print "That's what you would have after that:",cur_money
+    print "That's what you would have after that:",int(float(cur_money))
 
 print "Welcome to the Dice-Simulator!"
 print "How much money do you have?"
 START_MONEY = raw_input("> ")
 if START_MONEY.isdigit() is False:
-    exit_program()
+    exit_program("Wrong Number!")
 print "How high is the Winning-Chance? (10-90)"
 CHANCE = raw_input("> ")
 if CHANCE.isdigit() is False or CHANCE > "90" or CHANCE < "10":
-    exit_program()
+    exit_program("Wrong Number!")
 print "How much is the payout multiplier at this chance?"
-PAYOUT_ADDS = raw_input("> ")
-if PAYOUT_ADDS.isdigit() is False:
-    exit_program()
+PAYOUT_ADDS = raw_input("> x")
 print "How much do you want to bet every round?"
 BET = raw_input("> ")
 if BET.isdigit() is False:
-    exit_program()
+    exit_program("Wrong Number!")
 print "How many times do you want to increase your bet if you loose?"
-LOOSE_IN = raw_input("> ")
-if LOOSE_IN.isdigit() is False:
-    exit_program()
+LOOSE_IN = raw_input("> x")
 print "How many rounds do you want to go?"
 ROUNDS = raw_input("> ")
 if ROUNDS.isdigit() is False:
-    exit_program()
+    exit_program("Wrong Number!")
 calculate()
