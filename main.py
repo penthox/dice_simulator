@@ -20,14 +20,32 @@ def calculate():
 print "Welcome to the Dice-Simulator!"
 print "How much money do you have?"
 START_MONEY = raw_input("> ")
+if START_MONEY.isdigit() is False:
+    print "Wrong Number!"
+    exit()
 print "How high is the Winning-Chance? (10-90)"
 CHANCE = raw_input("> ")
+if CHANCE.isdigit() is False or CHANCE > "90" or CHANCE < "10":
+    print "Wrong Number!"
+    exit()
 print "How much is the payout multiplier at this chance?"
 PAYOUT_ADDS = raw_input("> ")
+if PAYOUT_ADDS.isdigit() is False:
+    print "Wrong Number!"
+    exit()
 print "How much do you want to bet every round?"
 BET = raw_input("> ")
-print "How many times do you want to increase your bet if you loose? (1-100)"
+if BET.isdigit() is False:
+    print "Wrong Number!"
+    exit()
+print "How many times do you want to increase your bet if you loose?"
 LOOSE_IN = raw_input("> ")
+if LOOSE_IN.isdigit() is False:
+    print "Wrong Number!"
+    exit()
 print "How many rounds do you want to go?"
 ROUNDS = raw_input("> ")
+if ROUNDS.isdigit() is False:
+    print "Wrong Number!"
+    exit()
 calculate()
